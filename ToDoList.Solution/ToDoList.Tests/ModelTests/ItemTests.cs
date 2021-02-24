@@ -89,7 +89,7 @@ namespace ToDoList.Tests
       string inputUser = "swimming";
       // Act
       Item newItem1 = new Item(inputUser);
-      string temp = " ";
+      string temp = newItem1.Description;
 
       // Assert
       Assert.AreEqual(inputUser, temp);
