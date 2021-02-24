@@ -10,8 +10,8 @@ namespace ToDoList.Models
       Console.WriteLine("-----------------------------------------------------------");
       Console.WriteLine("@");
       Console.WriteLine("Welcome to the To Do List");
-      Console.WriteLine("Would you like to add an item to your list or view your list?");
-      Console.WriteLine("Please type Add or View:");
+      Console.WriteLine("Would you like to add an item to your list or view your list or find one item already on your list?");
+      Console.WriteLine("Please type Add or View or Find:");
 
       string userInput = Console.ReadLine();
       if (userInput.ToLower() == "add")
@@ -30,7 +30,19 @@ namespace ToDoList.Models
         {
           Console.WriteLine(element.Description);
         }
+        Main();
       }
+      else if (userInput.ToLower() == "find")
+      {
+        // Ask the user for some word or words which appear in the to do list item's description
+        Console.WriteLine("Enter a word or words to search for:");
+        string needlePart = Console.ReadLine();
+        // Call static Find method to search all _instances
+        Console.WriteLine(Item.Find(needlePart));
+        // Return message (full description if found, not found message when not found) and print message to Console
+        Main();
+      }
+      
     }
   }
 }

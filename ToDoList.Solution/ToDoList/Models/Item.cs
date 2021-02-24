@@ -23,5 +23,28 @@ namespace ToDoList.Models
       Description = description;
       _instances.Add(this);
     }
+
+    public static string Find(string needle)
+    {
+      string message = "Your to do list item(s) has/have been found: ";
+      bool itemFound = false;
+      foreach(Item hay in Item.GetAll())
+      {
+        if (hay.Description.Contains(needle))
+        {
+          message += "\n" + hay.Description;
+          itemFound = true;
+        }
+      }
+      if (itemFound)
+      {
+        return message;
+      }
+      else
+      {
+        message = "Your ToDo List Item could not be found";
+        return message;
+      }
+    }
   }
 }
