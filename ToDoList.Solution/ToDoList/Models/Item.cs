@@ -24,7 +24,7 @@ namespace ToDoList.Models
       _instances.Add(this);
     }
 
-    public static string Find(string needle)
+    public static string FindItem(string needle)
     {
       string message = "Your to do list item(s) has/have been found: ";
       bool itemFound = false;
@@ -46,5 +46,10 @@ namespace ToDoList.Models
         return message;
       }
     }
+
+    // public static string Update(string answer)
+    // {
+      
+    // }
   }
 }
