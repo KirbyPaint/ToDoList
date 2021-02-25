@@ -66,6 +66,7 @@ namespace ToDoList.Models
           // searchMatches.Add(allTasks.Select( x => x.Description);
 
           // Add() will add the searched-for Item to a List<Item>
+
           searchMatches.Add("string");
           Item newItem = new Item(taskToUpdate);
           // searchMatches.Add(newItem);
@@ -84,6 +85,7 @@ namespace ToDoList.Models
               Console.WriteLine("Please provide a new description for your task");
               // Take user's new description
               string newDescription = Console.ReadLine().ToLower();
+              Item[0].Description = newDescription;
               // and pass it through to the selected list item
             }
           }
